@@ -2,6 +2,13 @@
   HTML content. To learn how to do something, just try searching Google for questions like
    "how to change link color." */
 
+:root {
+  /* color variables for theming */
+  --bg-dark: #1f2d46;
+  --bg-light: #385992;
+  --link: #eabd63;
+  --link-highlight: #dd9638;
+}
 
 body, div, main, section, article {
   box-sizing: border-box; 
@@ -9,7 +16,8 @@ body, div, main, section, article {
 
 /* universal background color */
 body {
-  background-color: #DA5437; 
+  background-color: var(--bg-dark); 
+  color: #d6dade;
 }
 
 /* header image */
@@ -27,14 +35,31 @@ header img {
 
 /*FONTS*/
 
+/* custom handwriting font */
+@font-face {
+  font-family: 'Handwriting';
+  src: url('../fonts/HyningsHandwritingV2-Regular.ttf');
+}
+
 /* header font */
 #showComic, header, h1, h2, h3, h4, h5 {
-  font-family: 'Cherry Cream Soda', cursive;
+  font-family: 'Handwriting', sans-serif;
+}
+
+/* header sizes */
+h1 {
+  font-size: 3em;
+}
+h2 {
+  font-size: 2em;
+}
+h3 {
+  font-size: 1.5em;
 }
 
 /* body font */
 .subPage p, footer, #authorNotes, .archiveTable {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Brush Script MT', cursive;
   font-size: large;
 }
 
@@ -45,11 +70,12 @@ header img {
 .subPage {
   width: 1000px;
   max-width: 98%;
-  background-color: #ffffff;
-  outline: 3px solid #000000;
+  background-color: var(--bg-light);
+  outline: 3px solid #ffffff;
   margin: auto;
   margin-bottom: 10px;
-  padding: 0px 12px 12px;
+  margin-top: 30px;
+  padding: 6px 12px 12px;
 }
 
 .subPage:not(.archivePage) {
@@ -77,19 +103,33 @@ header img {
 
 /* link colors */
 a {
-      color: #000000;
+      color: var(--link);
     }
 
 a:hover {
-      color: #DA5437;
+      color: var(--link-highlight);
     }
+
+/* 18+ content filter */
+.contentFilter {
+  width: 50%;
+  margin: auto;
+  margin-top: -50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.contentFilter img {
+  width: 100%;
+}
 
 /* HEADER */
 header #nav {
-  background-color: #ffffff;
-  outline: 3px solid #000000;
-  font-size: 20px;
+  background-color: var(--bg-light);
+  outline: 3px solid #ffffff;
+  font-size: 30px;
   width: 98%;
+  padding: 5px;
   margin: auto;
 }
 
@@ -117,13 +157,17 @@ header #nav {
 
 /* style author notes */
 #authorNotes {
-  background-color:#ffffff;
-  outline: 3px solid #000000;
+  background-color: var(--bg-light);
+  outline: 3px solid #ffffff;
   margin: auto;
   padding: 3px;
-  padding-top: 0px;
   width: 900px;
   max-width: 98%;
+}
+#authorNotes h1,
+#authorNotes h2,
+#authorNotes h3 {
+  text-align: center;
 }
 
 /* ARCHIVE PAGE */
@@ -179,28 +223,37 @@ header #nav {
 
 /* FOOTER */
 footer {
-  color: #421a1a;
+/*  color: #421a1a; */
   margin-top: 12px;
   margin-bottom: 15px;
-  float: left;
   width: 100%;
   font-size: 12px;
+  text-align: center;
 }
 
 footer p {
   margin: auto;
 }
 
-footer a {
+/*footer a {
   color: #c8d32b
 }
 
 footer a:hover {
   color: #868d26
-}
+}*/
 
 /* take away margins from the edges of the screen */
 html, body {
   margin: 0;
 }
 
+
+@media only screen and (max-width: 600px) {
+  
+.contentFilter {
+  width: 80%;
+  margin-top: -20px;
+}
+
+}
