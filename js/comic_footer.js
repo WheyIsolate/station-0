@@ -6,5 +6,7 @@ document.querySelector(".writeFooter").innerHTML = `
         <p>There's also a link back to Rarebit. It's ultimately your choice whether to delete it or not but it'd be cool of you to keep it there and spread the word...</p> 
         <p><strong>Powered by</strong></p>
         <a href="https://rarebit.neocities.org"><img src="img/rarebitlogo_small.png" height = "30" /></a>
+        <p><strong>With help from</strong></p>
+        <a href="https://exclave.city/"><img src="https://exclave.city/images/button1.gif" alt=Exclave></a>
     </footer>
 `;

@@ -98,9 +98,13 @@ h3 {
 
 /* specific to Characters */
 .charTable, .charTable td { 
-  width: 100%;
+  width: 70%;
   text-align: center;
   padding-bottom: 40px;
+  margin: auto;
+}
+.charTable p {
+  text-align: left;
 }
 
 /* change character image on hover */
@@ -108,7 +112,7 @@ h3 {
   position: relative;
   top: 0;
   left: 0;
-  width: 60%;
+  width: 100%;
   display: block;
   margin: auto;
 }
@@ -285,6 +289,10 @@ html, body {
 .contentFilter {
   width: 80%;
   margin-top: -20px;
+}
+
+.charTable {
+  width: 100%;
 }
 
 }
