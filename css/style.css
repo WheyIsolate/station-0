@@ -60,7 +60,7 @@ h3 {
 /* body font */
 .subPage p, footer, #authorNotes, .archiveTable {
   font-family: 'Brush Script MT', cursive;
-  font-size: large;
+  font-size: medium;
 }
 
 /* STYLING FOR SUBPAGES (about, characters, etc) */
@@ -99,6 +99,37 @@ h3 {
 /* specific to Characters */
 .charTable, .charTable td { 
   width: 100%;
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+/* change character image on hover */
+.charContainer {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 60%;
+  display: block;
+  margin: auto;
+}
+.charContainer img {
+  width: 100%;
+}
+.charPreview {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.charHover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.charHover:hover {
+  opacity: 1;
+  transition: opacity 0.5s;
 }
 
 /* link colors */
