@@ -4,10 +4,10 @@
 
 :root {
   /* color variables for theming */
-  --bg-dark: #1f2d46;
+  --bg-dark: #000000;
   --bg-light: #385992;
-  --link: #eabd63;
-  --link-highlight: #dd9638;
+  --link: #ff000d;
+  --link-highlight: #f99a4c;
 }
 
 body, div, main, section, article {
@@ -20,10 +20,18 @@ body {
   color: #d6dade;
 }
 
-/* header image */
+/* header stuff */
+header {
+  display: flex;
+  flex-direction: row;
+  margin: 40px 40px;
+}
+header a:has(img) {
+  flex: 50%;
+}
 header img {
-  width: 500px;
-  max-width: 98%;
+  height: 4em;
+  float: right;
 }
 
 /* clearfix hack to prevent image overflow. check out the W3Schools page on it. */
@@ -37,13 +45,13 @@ header img {
 
 /* custom handwriting font */
 @font-face {
-  font-family: 'Handwriting';
-  src: url('../fonts/HyningsHandwritingV2-Regular.ttf');
+  font-family: 'Libertine';
+  src: url('../fonts/LinLibertine_R.ttf');
 }
 
 /* header font */
 #showComic, header, h1, h2, h3, h4, h5 {
-  font-family: 'Handwriting', sans-serif;
+  font-family: 'Libertine', sans-serif;
 }
 
 /* header sizes */
@@ -160,12 +168,13 @@ a:hover {
 
 /* HEADER */
 header #nav {
-  background-color: var(--bg-light);
-  outline: 3px solid #ffffff;
-  font-size: 30px;
+  font-size: 1.75em;
   width: 98%;
-  padding: 5px;
   margin: auto;
+}
+header #nav a {
+  padding: 15px;
+  text-decoration: none;
 }
 
 /* HOMEPAGE */
@@ -284,8 +293,35 @@ html, body {
 }
 
 
+/* media queries for mobile support */
 @media only screen and (max-width: 600px) {
   
+h1 {
+  font-size: 2.5em;
+}
+h2 {
+  font-size: 1.75em;
+}
+h3 {
+  font-size: 1.25em;
+}
+
+header {
+  flex-direction: column;
+  margin: 20px 10px;
+}
+header img {
+  height: 3em;
+  float: none;
+  margin-bottom: 10px;
+}
+header #nav {
+  font-size: 1.25em;
+}
+header #nav a {
+  padding: 5px;
+}
+
 .contentFilter {
   width: 80%;
   margin-top: -20px;

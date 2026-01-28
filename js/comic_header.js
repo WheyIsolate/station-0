@@ -2,14 +2,14 @@
 //at the bottom of your page, but before the js script calls and the closing body tag, put an empty div with a class of "writeHeader"
 document.querySelector(".writeHeader").innerHTML = `
     <header align="center">
-        <a href="index.html"><img src="./img/logo.png" alt="" /></a> 
+        <a href="index.html"><img src="./img/name.png" alt="" /></a> 
 
         <div id="nav">
-            <a href="comic.html">HOME</a> |
-            <a href="archive.html">ARCHIVE</a> |
-            <a href="about.html">ABOUT</a> |
-            <a href="characters.html">CHARACTERS</a> |
-            <a href="blog.html">BLOG</a>
+            <a href="comic.html">home</a>
+            <a href="archive.html">archive</a>
+            <a href="about.html">about</a>
+            <a href="characters.html">characters</a>
+            <a href="blog.html">blog</a>
         </div>
     </header>
 `;
