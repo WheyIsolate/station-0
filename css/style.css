@@ -6,8 +6,8 @@
   /* color variables for theming */
   --bg-dark: #000000;
   --bg-light: #385992;
-  --link: #ff000d;
-  --link-highlight: #f99a4c;
+  --body-text: #ff000d;
+  --text-highlight: #f99a4c;
 }
 
 body, div, main, section, article {
@@ -45,7 +45,7 @@ header img {
 
 /*FONTS*/
 
-/* custom handwriting font */
+/* custom font */
 @font-face {
   font-family: 'Libertine';
   src: url('../fonts/LinLibertine_R.ttf');
@@ -69,8 +69,9 @@ h3 {
 
 /* body font */
 .subPage p, footer, #authorNotes, .archiveTable {
-  font-family: 'Brush Script MT', cursive;
+  font-family: 'Franklin Gothic Medium', serif;
   font-size: medium;
+  color: var(--body-text)
 }
 
 /* STYLING FOR SUBPAGES (about, characters, etc) */
@@ -146,11 +147,11 @@ h3 {
 
 /* link colors */
 a {
-      color: var(--link);
+      color: var(--body-text);
     }
 
 a:hover {
-      color: var(--link-highlight);
+      color: var(--text-highlight);
     }
 
 /* 18+ content filter */
@@ -172,6 +173,7 @@ a:hover {
   min-height: 100px;
   padding: 1px;
   padding-left: 190px;
+  margin-bottom: 100px;
   text-align: left;
   background-image: url("../img/background-animated.webp");
   background-size: cover;
@@ -314,6 +316,17 @@ html, body {
   margin: 0;
 }
 
+/* images over page backgrounds */
+.backgroundImage {
+  position: fixed;
+  top: 15vh;
+  left: 15%;
+  width: 70%;
+  opacity: 0.25;
+  z-index: -1;
+  pointer-events: none;
+}
+
 
 /* media queries for mobile support */
 @media only screen and (max-width: 600px) {
@@ -343,12 +356,32 @@ header #nav a {
   padding: 5px;
 }
 
+.pageTitle {
+  padding-left: 120px;
+  min-height: 75px;
+  margin-bottom: 75px;
+}
+.pageTitle .titleOverlay {
+  margin-left: -120px;
+}
+.pageTitle .titleOverlay img {
+  width: 110px;
+  top: 150px;
+}
+
 .contentFilter {
   width: 80%;
   margin-top: -20px;
 }
 
 .charTable {
+  width: 100%;
+}
+
+
+.backgroundImage {
+  top: 30vh;
+  left: 0;
   width: 100%;
 }
 
