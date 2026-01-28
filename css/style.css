@@ -30,10 +30,10 @@ header {
   max-width: 98%;
 }
 header a:has(img) {
-  flex: 50%;
+  flex: 70%;
 }
 header img {
-  height: 4em;
+  height: 4.5em;
 }
 
 /* clearfix hack to prevent image overflow. check out the W3Schools page on it. */
@@ -192,7 +192,7 @@ a:hover {
 
 /* HEADER */
 header #nav {
-  font-size: 1.75em;
+  font-size: 2em;
   width: 98%;
   margin: auto;
 }
@@ -350,7 +350,7 @@ header img {
   margin-bottom: 10px;
 }
 header #nav {
-  font-size: 1.25em;
+  font-size: 1.5em;
 }
 header #nav a {
   padding: 5px;

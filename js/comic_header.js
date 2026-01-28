@@ -6,10 +6,9 @@ document.querySelector(".writeHeader").innerHTML = `
 
         <div id="nav">
             <a href="comic.html">home</a>
+            <a href="updates.html">updates</a>
             <a href="archive.html">archive</a>
-            <a href="about.html">about</a>
-            <a href="characters.html">characters</a>
-            <a href="blog.html">blog</a>
+            <a href="cast.html">cast</a>
         </div>
     </header>
 `;
