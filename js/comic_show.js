@@ -13,7 +13,7 @@ writeNav(true); //show navigation for comic pages. to toggle either images or te
 //debug
 console.log(pg)
 
-writePageTitle(".writePageTitle", true, " - "); //write title of page. true/false
+writePageTitle(".writePageTitle", false, " - "); //write title of page. true/false
 
 writePageClickable(".writePageClickable",true); //show the current page. to toggle whether pages can be clicked to move to the next one, set this to true or false.
 
@@ -111,17 +111,20 @@ function imgOrText(setImg,navTextSet) { //function that writes the indicated nav
 function writeNav(imageToggle) {
     let writeNavDiv = document.querySelectorAll(".writeNav");
     writeNavDiv.forEach(function(element) {
+    //decorative center image added on
       element.innerHTML = `<div class="comicNav">
         ${firstButton()}
         ${divider()}
         ${prevButton()}
         ${divider()}
+        <img src="img/comicnav/waow.png" class="comicNavCenter">
         ${nextButton()}
         ${divider()}
         ${lastButton()}
         </div>
         `;})
 
+    //button functions modified to return plain text on first and last pages
     function firstButton() {
         //FIRST BUTTON
         if (pg > 1) {
@@ -131,7 +134,7 @@ function writeNav(imageToggle) {
             if (!imageToggle) {
                 return imgOrText(imageToggle, 0);
             } else {
-                return ``;
+                return `<p>` + imgOrText(imageToggle, 0) + `</p>`;
             }
         }
     }
@@ -153,7 +156,7 @@ function writeNav(imageToggle) {
             if (!imageToggle) {
                 return imgOrText(imageToggle, 1);
             } else {
-                return ``;
+                return `<p>` + imgOrText(imageToggle, 1) + `</p>`;
             }
         }
     }
@@ -167,7 +170,7 @@ function writeNav(imageToggle) {
             if (!imageToggle) {
                 return imgOrText(imageToggle, 2);
             } else {
-                return ``;
+                return `<p>` + imgOrText(imageToggle, 2) + `</p>`;
             }
         }
     }
@@ -181,7 +184,7 @@ function writeNav(imageToggle) {
             if (!imageToggle) {
                 return imgOrText(imageToggle, 3);
             } else {
-                return ``;
+                return `<p>` + imgOrText(imageToggle, 3) + `</p>`;
             }
         }
     }

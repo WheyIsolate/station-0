@@ -11,7 +11,7 @@ writeArchive(
     maxpg, //latest page to list. setting to maxpg will make it automatically update with the latest page
     -1, //if set to 0, list is displayed "latest first". if set to -1, list is displayed chronologically
     false, //if set to true, each comic will have its own thumbnail image next to it. if a comic doesn't have its own thumbnail, it'll be set to the default thumbnail.
-    true //if set to true, each comic will have a display number
+    false, //if set to true, each comic will have a display number
 );
 
 writeArchive("lastfirst", 1, maxpg, 0, true,true);

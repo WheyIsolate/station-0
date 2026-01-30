@@ -2,7 +2,7 @@
 //at the bottom of your page, but before the js script calls and the closing body tag, put an empty div with a class of "writeHeader"
 document.querySelector(".writeHeader").innerHTML = `
     <header align="center">
-        <a href="index.html"><img src="./img/name.png" alt="" /></a> 
+        <a href="comic.html"><img src="./img/name.png" alt="" /></a> 
 
         <div id="nav">
             <a href="comic.html">home</a>

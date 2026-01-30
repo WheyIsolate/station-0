@@ -17,7 +17,10 @@ body, div, main, section, article {
 /* universal background color */
 body {
   background-color: var(--bg-dark); 
+  /* default text properties outside divs */
   color: #d6dade;
+  font-family: 'Franklin Gothic Medium', serif;
+  font-size: medium;
 }
 
 /* header stuff */
@@ -67,10 +70,8 @@ h3 {
   font-size: 1.5em;
 }
 
-/* body font */
+/* body text color */
 .subPage p, footer, #authorNotes, .archiveTable {
-  font-family: 'Franklin Gothic Medium', serif;
-  font-size: medium;
   color: var(--body-text)
 }
 
@@ -192,7 +193,7 @@ a:hover {
 
 /* HEADER */
 header #nav {
-  font-size: 2em;
+  font-size: 1.5em;
   width: 98%;
   margin: auto;
 }
@@ -209,12 +210,16 @@ header #nav a {
   flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
-  padding: 10px 0px;
 }
 .comicNav img {
   width: 80px;
   max-width: 98%;
-  padding-right: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.comicNav .comicNavCenter {
+  width: 250px;
+  margin-top: 2em;
 }
 
 /* style comic page image */
@@ -225,9 +230,8 @@ header #nav a {
 
 /* style author notes */
 #authorNotes {
-  background-color: var(--bg-light);
-  outline: 3px solid #ffffff;
   margin: auto;
+  margin-top: 50px;
   padding: 3px;
   width: 900px;
   max-width: 98%;
@@ -242,7 +246,7 @@ header #nav a {
 
 /* style table in which archive is displayed */
 .archiveTable {
-  width: 90%;
+  width: 70%;
   border-collapse:collapse;
 }
 
@@ -250,7 +254,6 @@ header #nav a {
 .archiveTable td {
   padding: 3px;
   vertical-align: center;
-  
 }
 
 /* style table cell in which page title is displayed */
@@ -311,6 +314,11 @@ footer a:hover {
   color: #868d26
 }*/
 
+hr {
+  width: 900px;
+  max-width: 98%;
+}
+
 /* take away margins from the edges of the screen */
 html, body {
   margin: 0;
@@ -325,6 +333,22 @@ html, body {
   opacity: 0.25;
   z-index: -1;
   pointer-events: none;
+}
+
+/* comic page styling */
+#showComic {
+  width: 600px;
+  max-width: 100%;
+}
+.comicPage {
+  margin-top: 100px;
+}
+
+/* comic navigation button styling */
+.writeNav a,
+.writeNav p {
+  font-size: 1.5em;
+  text-decoration: none;
 }
 
 
@@ -350,7 +374,7 @@ header img {
   margin-bottom: 10px;
 }
 header #nav {
-  font-size: 1.5em;
+  font-size: 1.25em;
 }
 header #nav a {
   padding: 5px;
@@ -378,11 +402,23 @@ header #nav a {
   width: 100%;
 }
 
-
 .backgroundImage {
   top: 30vh;
   left: 0;
   width: 100%;
+}
+
+.comicPage {
+  margin: 50px 1% 25px 1%;
+}
+
+.writeNav a,
+.writeNav p {
+  font-size: 1em;
+}
+.comicNav .comicNavCenter {
+  width: 100px;
+  margin-top: 1em;
 }
 
 }
