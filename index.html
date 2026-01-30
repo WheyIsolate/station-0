@@ -8,36 +8,180 @@
 
     <!-- style -->
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
-
-    <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <!-- Cherry Cream Soda -->
-    <link href="https://fonts.googleapis.com/css2?family=Cherry+Cream+Soda&display=swap" rel="stylesheet">
-    <!-- Open Sans -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-</head>
+    <style>
+        html {
+            height: 100%;
+        }
+        body {
+            background-image: url("img/background.jpg");
+            background-size: cover;
+            background-position: 50% 50%;
+            min-height: 100%;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .filterDiv {
+            max-width: 95%;
+        }
+        .subPage {
+            display: inline;
+        }
+        .contentFilter {
+            padding-right: 10px;
+        }
+        h1 {
+            color: var(--body-text);
+        }
+        #audio {
+            display: none;
+        }
+        #audioControl {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        .spin {
+            animation: rotation 2s linear infinite;
+        }
+        @keyframes rotation {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+        }
+    </style>
+    
+    <!-- JQuery for music script -->
+    <script src="js/jquery-4.0.0.min.js"></script>
+    
+    </head>
 <body>
-<div align="center">
+
+<audio id="audio" preload="auto" tabindex="0" controls="" type="audio/mpeg"></audio>
+<a href="javascript:void(0)" id="audioControl"><img src="img/music button.png"></a>
+
+<div align="center" class="filterDiv">
 
     <div class="subPage clearfix">
-        <h1>18+ Warning!</h1>
-        <p>This comic contains explicit content. Proceed at your own discretion!</p>
+        <h1>this webcomic is 18+ only</h1>
         <div class="contentFilter">
-            <a href="https://en.wikipedia.org/wiki/Yuri_(genre)" title="Leave...">
-                <img src="img/daiko gif (x).gif" style="margin-top: 20%">
-            </a>
             <a href="comic.html" title="Enter!">
                 <img src="img/maria gif (check).gif">
+            </a>
+            <a href="https://en.wikipedia.org/wiki/Yuri_(genre)" title="Leave...">
+                <img src="img/daiko gif (x).gif" style="margin-top: 29%; width: 96%;">
             </a>
         </div>
 
     </div>
 </div>
-    <!-- footer -->
-    <div class="writeFooter"></div>
 
-<!-- at the end of this page we only call the header and footer scripts, because we don't need use any functions from the other scripts. -->
-<script src="js/comic_header.js" defer></script>
-<script src="js/comic_footer.js" defer></script>
+<!-- music script, credit to https://jsfiddle.net/vkMqR/1404/ -->
+<script>
+var audio;
+var playlist;
+var tracks;
+var current;
+
+var musicarr = ["audio/Weyes Blood - Weyes Blood - Andromeda (Official Video).mp3",
+                "audio/juan karlos - juan karlos - Kalawakan.mp3",
+                "audio/Still Woozy - Still Woozy - Cooks (Official Video).mp3",
+                "audio/Victor Lundberg - You're Sorry.mp3",
+                "audio/Tokyo Tea Room - It's Me & You.mp3",
+                "audio/Roosevelt - Luna.mp3",
+                "audio/brown eyed girl - Topic - recently,.mp3",
+                "audio/Two Another - Two Another - Another Night (Official Audio).mp3",
+                "audio/Remi Wolf - Remi Wolf - Sexy Villain (Official Video).mp3",
+                "audio/Glass Animals - Cane Shuga.mp3",
+                "audio/Mild Orange - Some Feeling.mp3",
+                "audio/Michi - Night Moves.mp3",
+                "audio/Hotel Ugly - Shut up My Moms Calling.mp3",
+                "audio/Hozier - Would That I.mp3",
+                "audio/Frances Forever - space girl (feat. chloe moriondo).mp3",
+                "audio/Raveena Aurora - Honey.mp3",
+                "audio/Remi Wolf - Remi Wolf - Hello Hello Hello (Official Audio).mp3",
+                "audio/Planet Ridiculon - Guillotina - Mewgenics Official lyric Video.mp3",
+                "audio/Joe Hertler - Old Love  🌸  Joe Hertler & The Rainbow Seekers (Official Music Video) ｜ A Samurai Love Story - 2025.mp3",
+                "audio/Planet Ridiculon - Kannibal Kitty - Mewgenics Official Lyric Video.mp3",
+                "audio/MICKEY DARLING - MICKEY DARLING - VROOM VROOM (audio).mp3",
+                "audio/Fleetwood Mac - Fleetwood Mac - Dreams (Official Audio).mp3",
+                "audio/Fleetwood Mac - Fleetwood Mac - The Chain (Official Audio).mp3",
+                "audio/KateBushMusic - Kate Bush - Wuthering Heights - Official Music Video - Version 1.mp3",
+                "audio/Delorians - Needy.mp3",
+                "audio/grentperez - grentperez - Cherry Wine (Official Lyric Video).mp3",
+                "audio/Hozier - Hozier - Be (Audio).mp3",
+                "audio/I DONT KNOW HOW BUT THEY FOUND ME  - I DONT KNOW HOW BUT THEY FOUND ME - Razzmatazz (Official Lyric Video).mp3",
+               ];
+shuffle(musicarr);
+
+var audioElement = document.getElementById("audio");
+var ctrl = document.getElementById("audioControl");
+
+var pause = true;
+function audioButton() {
+    var method = pause ? 'play' : 'pause';
+    audioElement[method]();
+    
+    if(pause) {
+        ctrl.classList.add("spin");
+    }else {
+        ctrl.classList.remove("spin");
+    }
+
+    pause = !pause;
+    
+    return false;
+}
+ctrl.addEventListener('click', audioButton)
+
+init();
+function init(){
+    current = 0;
+    audio = $('audio');
+    audio[0].volume = .40;
+    len = musicarr.length;
+    
+    run(musicarr[current], audio[0]);
+    
+    audio[0].addEventListener('ended',function(e){
+        current++;
+        if(current == len){
+            current = 0;
+        }
+        run(musicarr[current],audio[0]);
+    });
+}
+
+function run(link, player){
+        player.src = link;
+        audio[0].load();
+        audio[0].play();
+        $('#playing').html("<ul><li><a>" + link+ "</a></li></ul>");     
+}
+
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex ;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+     </script>
 </body>
 </html>

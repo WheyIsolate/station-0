@@ -5,7 +5,8 @@
 :root {
   /* color variables for theming */
   --bg-dark: #000000;
-  --bg-light: #385992;
+  --bg-light: #05213c;
+  --white-text: #d6dade;
   --body-text: #ff000d;
   --text-highlight: #f99a4c;
 }
@@ -18,7 +19,7 @@ body, div, main, section, article {
 body {
   background-color: var(--bg-dark); 
   /* default text properties outside divs */
-  color: #d6dade;
+  color: var(--white-text);
   font-family: 'Franklin Gothic Medium', serif;
   font-size: medium;
 }
@@ -57,6 +58,7 @@ header img {
 /* header font */
 #showComic, header, h1, h2, h3, h4, h5 {
   font-family: 'Libertine', sans-serif;
+  color: var(--white-text);
 }
 
 /* header sizes */
@@ -288,7 +290,8 @@ header #nav a {
 
 /* highlight a table row and make pointer into hand when moused over */
 .archiveRow:hover {
-  background-color: #DA5437;
+  background-color: var(--bg-light);
+  color: var(--text-highlight);
   cursor: pointer;
 }
 
