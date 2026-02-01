@@ -230,10 +230,20 @@ if (document.title === "Blog Post") {
 }
 
 //Custom stuff for updates page
+var paramsString = new URL(window.location.href);
+var searchParams = new URLSearchParams(paramsString.search);
+console.log(searchParams.get("update"))
+
 if (document.getElementById("updateBox")) {
-  document.getElementById("updateBox").innerHTML = `
-    <iframe name="updateFrame" src="` + postsArray[0] + `"></iframe>
-  `
+  if (searchParams.has("update")) {
+    document.getElementById("updateBox").innerHTML = `
+      <iframe name="updateFrame" src="` + searchParams.get("update") + `"></iframe>
+    `
+  }else {
+    document.getElementById("updateBox").innerHTML = `
+      <iframe name="updateFrame" src="` + postsArray[0] + `"></iframe>
+    `
+  }
 }
 
 if (document.getElementById("updateTitleText")) {
