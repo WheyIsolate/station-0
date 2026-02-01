@@ -1,0 +1,49 @@
+html,
+body {
+    background-color: transparent;
+}
+#container {
+    margin: 20px;
+}
+
+h1, h2, h3, h4, p {
+    color: var(--body-text);
+}
+
+.updateTitle {
+    padding: 10px;
+    width: max-content;
+    max-width: 100%;
+    background-image: url("../img/update\ post\ bits.jpg");
+    background-size: 500px;
+}
+.updateTitle.altTitle {
+    background-image: url("../img/update\ post\ bits2.jpg");
+}
+.updateTitle h2 {
+    color: #0f0f0e;
+    margin: 0;
+}
+
+.titleWrap {
+    display: none;
+}
+
+#nextprev {
+    text-align: center;
+}
+
+@media only screen and (max-width: 525px) {
+
+body {
+    font-size: small;
+}
+
+.titleSpace {
+    display: none;
+}
+.titleWrap {
+    display: inline;
+}
+
+}

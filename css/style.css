@@ -175,6 +175,7 @@ a:hover {
   min-height: 100px;
   padding: 1px;
   padding-left: 190px;
+  padding-right: 10px;
   margin-bottom: 100px;
   text-align: left;
   background-image: url("../img/background-animated.webp");
@@ -190,6 +191,14 @@ a:hover {
   position: absolute;
   width: 180px;
   top: 170px;
+}
+.pageTitle h1 {
+  margin-bottom: 0.3em;
+}
+.pageTitle p {
+  color: var(--white-text);
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
 }
 
 /* HEADER */
@@ -353,10 +362,43 @@ html, body {
   text-decoration: none;
 }
 
+/* updates page */
+.updates {
+  padding-top: 150px;
+  padding-bottom: 1px;
+  background-color: #efe8d3;
+}
+.updates li,
+.updates a {
+  color: #0f0f0e;
+  text-align: left;
+}
+
+#updateBox {
+  height: 600px;
+  margin: 20px;
+  margin-bottom: 100px;
+  background-color: #09090e;
+}
+
+/* border images */
+.borderImage {
+  height: 0;
+  width: 100%;
+}
+.borderImage img {
+  position: absolute;
+}
+
 
 /* media queries for mobile support */
 @media only screen and (max-width: 600px) {
   
+.subPage,
+#authorNotes {
+  font-size: small;
+}
+
 h1 {
   font-size: 2em;
 }
@@ -384,7 +426,7 @@ header #nav a {
 
 .pageTitle {
   padding-left: 120px;
-  min-height: 75px;
+  min-height: 70px;
   margin-bottom: 75px;
 }
 .pageTitle .titleOverlay {
@@ -392,7 +434,7 @@ header #nav a {
 }
 .pageTitle .titleOverlay img {
   width: 110px;
-  top: 150px;
+  top: 140px;
 }
 
 .contentFilter {
@@ -421,6 +463,13 @@ header #nav a {
 .comicNav .comicNavCenter {
   width: 100px;
   margin-top: 1em;
+}
+
+.updates {
+  padding-top: 90px;
+}
+#updateBox {
+  margin-bottom: 60px;
 }
 
 }

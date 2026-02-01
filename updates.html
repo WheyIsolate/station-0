@@ -8,6 +8,52 @@
 
     <!-- style -->
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
+    <!-- surely there's a better way to have page-specific styling for the page title... -->
+    <style>
+        .pageTitle {
+            min-height: 250px;
+            margin-bottom: 0;
+        }
+        .pageTitle .titleOverlay img {
+            position: absolute;
+            width: 180px;
+            top: 130px;
+            margin-left: 40px;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .mariaBorder {
+            width: 300px;
+            transform: translate(-310px, -140px)
+        }
+        .mariaSona {
+            width: 175px;
+            transform: translate(0px, -260px)
+        }
+    
+        @media only screen and (max-width: 600px) {
+            .pageTitle {
+                min-height: 175px;
+            }
+            .pageTitle .titleOverlay img {
+                width: 120px;
+                top: 110px;
+                margin-left: 10px;
+            }
+
+            .mariaBorder {
+                width: 200px;
+                transform: translate(-215px, -85px);
+            }
+            .mariaSona {
+                width: 115px;
+                transform: translate(0px, -165px);
+            }
+        }
+        </style>
 </head>
 <body>
 <div align="center">
@@ -15,10 +61,26 @@
     <div class="writeHeader"></div>
 
     <div class="subPage clearfix">
-        <h1>Blog</h1>
-        <p>The official blog for the Station -0 webcomic!</p> 
-        
+
+    <div class="pageTitle">
+        <h1>ABOUT</h1>
+        <p>Station -0 is a webcomic following 2 girls figuring out their lives at the end of the world.</p>
+        <p>&emsp;&ensp; updates: <strong>weekly</strong></p>
+        <div class="titleOverlay">
+            <img src="img/shelby astro.png">
+        </div>
+    </div>
+    
+    <div class="updates">
+        <div class="borderImage" style="text-align: right">
+            <img src="img/maria border2.png" class="mariaBorder">
+        </div>
+        <div id="updateBox"></div>
+        <div class="borderImage" style="text-align: left">
+            <img src="img/maria sona.png" class="mariaSona">
+        </div>
         <div id="postlistdiv"></div>
+    </div>
 
     </div>
 </div>

@@ -34,7 +34,8 @@ let postsArray = [
 //[ "posts/2020-11-10-Special-Characters-Example.html", encodeURI( 'Spéci@l "Character\'s" Examp|e' ) ],
 //[ "posts/2020-11-10-My-Third-Post-Example.html" ],
 //[ "posts/2020-11-10-My-Second-Post-Example.html" ],
-[ "posts/2020-11-10-Post-Template.html" ] ];
+[ "posts/2026-02-01-Placeholder-Update-1.html" ],
+[ "posts/2026-01-31-Placeholder-Update.html" ] ];
 
 //XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
@@ -138,9 +139,9 @@ function formatPostLink(i) {
     }
   }
   if (  postDateFormat.test ( postsArray[i][0].slice( 6,17 ) ) ) {
-    return '<li><a href="' + relativePath + '/'+ postsArray[i][0] +'">' + postsArray[i][0].slice(6,16) + " \u00BB " + postTitle_i + '</a></li>';
+    return '<li><a href="' + relativePath + '/'+ postsArray[i][0] +'" target="updateFrame">' + postsArray[i][0].slice(6,16) + " \u00BB " + postTitle_i + '</a></li>';
   } else {
-    return '<li><a href="' + relativePath + '/'+ postsArray[i][0] +'">' + postTitle_i + '</a></li>';
+    return '<li><a href="' + relativePath + '/'+ postsArray[i][0] +'" target="updateFrame">' + postTitle_i + '</a></li>';
   }
 }
 
@@ -175,17 +176,17 @@ let prevlink = "";
  a "Next Post" link, right? And vice versa with the oldest 
  post! That's what the following code handles.*/
 if ( postsArray.length < 2 ) {
-  nextprevHTML = '<a href="' + relativePath + '/index.html">Home</a>';
+  nextprevHTML = '';
 } else if ( currentIndex === 0 ) {
   prevlink = postsArray[currentIndex + 1][0];
-  nextprevHTML = '<a href="' + relativePath + '/index.html">Home</a> | <a href="'+ relativePath + '/' + prevlink +'">Previous Post \u00BB</a>';
+  nextprevHTML = '<a href="'+ relativePath + '/' + prevlink +'">Previous Post \u00BB</a>';
 } else if ( currentIndex === postsArray.length - 1 ) {
   nextlink = postsArray[currentIndex - 1][0];
-  nextprevHTML = '<a href="' + relativePath + '/' + nextlink +'">\u00AB Next Post</a> | <a href="' + relativePath + '/index.html">Home</a>';
+  nextprevHTML = '<a href="' + relativePath + '/' + nextlink +'">\u00AB Next Post</a>';
 } else if ( 0 < currentIndex && currentIndex < postsArray.length - 1 ) {
   nextlink = postsArray[currentIndex - 1][0];
   prevlink = postsArray[currentIndex + 1][0];
-  nextprevHTML = '<a href="' + relativePath + '/'+ nextlink +'">\u00AB Next Post</a> | <a href="' + relativePath + '/index.html">Home</a> | <a href="' + relativePath + '/'+ prevlink +'">Previous Post \u00BB</a>';
+  nextprevHTML = '<a href="' + relativePath + '/'+ nextlink +'">\u00AB Next Post</a> | <a href="' + relativePath + '/'+ prevlink +'">Previous Post \u00BB</a>';
 }
 
 //-----------------------------
@@ -226,4 +227,15 @@ if (document.getElementById("footer")) {
 //The <title> tag content is what shows up on browser tabs
 if (document.title === "Blog Post") {
   document.title = currentPostTitle;
+}
+
+//Custom stuff for updates page
+if (document.getElementById("updateBox")) {
+  document.getElementById("updateBox").innerHTML = `
+    <iframe name="updateFrame" src="` + postsArray[0] + `"></iframe>
+  `
+}
+
+if (document.getElementById("updateTitleText")) {
+  document.getElementById("updateTitleText").innerHTML = currentPostTitle + "<span class='titleSpace'>&emsp;&ensp;</span><span class='titleWrap'><br></span>" + niceDate;
 }
