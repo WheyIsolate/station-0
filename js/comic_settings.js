@@ -11,7 +11,7 @@ let pg = Number(findGetParameter("pg")); //make "pg" mean the current page numbe
 ////////////////////////
 
 //REALLY IMPORTANT ONES
-const maxpg = 4; //the current number of pages your comic has in total. this DOESNT necessarily mean number of IMAGE FILES as it doesn't count pages split into multiple files. 
+const maxpg = 40; //the current number of pages your comic has in total. this DOESNT necessarily mean number of IMAGE FILES as it doesn't count pages split into multiple files. 
 //YOU MUST UPDATE THIS NUMBER EVERY TIME YOU ADD A NEW PAGE or else it wont display the most recent page
 
 // COMIC PAGE SETTINGS
@@ -78,6 +78,330 @@ const pgData = [
         pgNum: 4,
         title: "",
         date: writeDate(2026, 1, 29),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 5,
+        title: "",
+        date: writeDate(2026, 2, 1),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 6,
+        title: "",
+        date: writeDate(2026, 2, 1),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 7,
+        title: "",
+        date: writeDate(2026, 2, 1),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 8,
+        title: "",
+        date: writeDate(2026, 2, 1),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 9,
+        title: "",
+        date: writeDate(2026, 2, 1),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 10,
+        title: "",
+        date: writeDate(2026, 2, 1),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 11,
+        title: "",
+        date: writeDate(2026, 2, 1),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 12,
+        title: "",
+        date: writeDate(2026, 2, 1),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 13,
+        title: "",
+        date: writeDate(2026, 2, 1),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 14,
+        title: "",
+        date: writeDate(2026, 2, 1),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 15,
+        title: "",
+        date: writeDate(2026, 2, 1),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 16,
+        title: "",
+        date: writeDate(2026, 2, 1),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 17,
+        title: "",
+        date: writeDate(2026, 2, 1),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 18,
+        title: "",
+        date: writeDate(2026, 2, 1),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 19,
+        title: "",
+        date: writeDate(2026, 2, 1),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 20,
+        title: "",
+        date: writeDate(2026, 2, 1),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 21,
+        title: "",
+        date: writeDate(2026, 2, 1),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 22,
+        title: "",
+        date: writeDate(2026, 2, 1),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 23,
+        title: "",
+        date: writeDate(2026, 2, 1),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 24,
+        title: "",
+        date: writeDate(2026, 2, 1),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 25,
+        title: "",
+        date: writeDate(2026, 2, 1),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 26,
+        title: "",
+        date: writeDate(2026, 2, 1),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 27,
+        title: "",
+        date: writeDate(2026, 2, 1),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 28,
+        title: "",
+        date: writeDate(2026, 2, 1),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 29,
+        title: "",
+        date: writeDate(2026, 2, 1),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 30,
+        title: "",
+        date: writeDate(2026, 2, 1),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 31,
+        title: "",
+        date: writeDate(2026, 2, 1),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 32,
+        title: "",
+        date: writeDate(2026, 2, 1),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 33,
+        title: "",
+        date: writeDate(2026, 2, 1),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 34,
+        title: "",
+        date: writeDate(2026, 2, 1),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 35,
+        title: "",
+        date: writeDate(2026, 2, 1),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 36,
+        title: "",
+        date: writeDate(2026, 2, 1),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 37,
+        title: "",
+        date: writeDate(2026, 2, 1),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 38,
+        title: "",
+        date: writeDate(2026, 2, 1),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 39,
+        title: "",
+        date: writeDate(2026, 2, 1),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 40,
+        title: "",
+        date: writeDate(2026, 2, 1),
         altText: "",
         imageFiles: 1,
         authorNotes: `
