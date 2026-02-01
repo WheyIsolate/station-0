@@ -390,6 +390,13 @@ html, body {
   position: absolute;
 }
 
+/* footer credit image */
+.footerImage {
+  position: absolute;
+  transform: translate(-20px, -92px);
+  pointer-events: none;
+}
+
 
 /* media queries for mobile support */
 @media only screen and (max-width: 600px) {

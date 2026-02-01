@@ -6,6 +6,8 @@ document.querySelector(".writeFooter").innerHTML = `
         <p><strong>Powered by</strong></p>
         <a href="https://rarebit.neocities.org"><img src="img/rarebitlogo_small.png" height = "30" /></a>
         <p><strong>With help from</strong></p>
+        <div style="height: 85px"></div>
+        <img src="img/em.png" class="footerImage">
         <a href="https://exclave.city/"><img src="https://exclave.city/images/button1.gif" alt=Exclave></a>
     </footer>
 `;
