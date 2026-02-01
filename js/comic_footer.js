@@ -3,10 +3,8 @@
 document.querySelector(".writeFooter").innerHTML = `
     <footer align="center">
         <p>Copyright © 2026 mayochum. All rights reserved.</p>
-        <p><strong>Powered by</strong></p>
-        <a href="https://rarebit.neocities.org"><img src="img/rarebitlogo_small.png" height = "30" /></a>
-        <p><strong>With help from</strong></p>
-        <div style="height: 85px"></div>
+        <p><strong>Powered by <a href="https://rarebit.neocities.org">Rarebit</a>, with help from:</strong></p>
+        <div style="height: 90px"></div>
         <img src="img/em.png" class="footerImage">
         <a href="https://exclave.city/"><img src="https://exclave.city/images/button1.gif" alt=Exclave></a>
     </footer>
