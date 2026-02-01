@@ -58,7 +58,6 @@ header img {
 /* header font */
 #showComic, header, h1, h2, h3, h4, h5 {
   font-family: 'Libertine', sans-serif;
-  color: var(--white-text);
 }
 
 /* header sizes */
