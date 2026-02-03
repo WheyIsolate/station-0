@@ -4,51 +4,64 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Station -0 | Characters</title>
+    <title>Station -0 | Cast</title>
 
     <!-- style -->
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
+    <style>
+        .subPage {
+            background-image: url("img/background3.jpg");
+            background-size: cover;
+            background-position: 50% 100%;
+            aspect-ratio: 0.74;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .subPage {
+                width: auto;
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
 <div align="center">
     <!-- header -->
     <div class="writeHeader"></div>
 
-    <div class="subPage clearfix" align="center">
-        <h1>Characters</h1>
-            <table class="charTable">
-                <!-- some character image containers have an inline width style to override parent sizing -->
-                <tr>
-                    <td>
-                    <div class="charContainer">
-                        <img src="img/characters/maria2.png" class="clearfix charPreview"/>
-                        <img src="img/characters/maria2 edited.png" alt="Maria Arling" class="clearfix charHover"/>
-                    </div>
-                    <h2>Maria Arling</h2>
-                    <p>Placeholder character description</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                    <div class="charContainer" style="width: 55%">
-                        <img src="img/characters/shelby.png" class="clearfix charPreview" />
-                        <img src="img/characters/shelby edited.png" alt="Shelby Arling" class="clearfix charHover" />
-                    </div>
-                    <h2>Shelby Arling</h2>
-                    <p>Placeholder character description</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                    <div class="charContainer" style="width: 85%">
-                        <img src="img/characters/wj.png" class="clearfix charPreview" />
-                        <img src="img/characters/wj edited.png" alt="Jackie An / Wilson Lu" class="clearfix charHover" />
-                    </div>
-                    <h2>Jackie An / Wilson Lu</h2>
-                    <p>Placeholder character description</p>
-                    </td>
-                </tr>
-            </table>
+    <div class="subPage" align="center">
+        <!-- character image positions are manually defined by container inline style -->
+        <!-- the "left" and "right" attributes, unintuitively, set the container positions relative to the page center.
+        I truly don't know why it works that way. -->
+        <div class="charContainer" style="width: 55%; top: 41%; right: 25%">
+            <img src="img/characters/maria2.png" class="clearfix charPreview" />
+            <img src="img/characters/maria2 edited.png" alt="Maria Arling" class="clearfix charHover" />
+        </div>
+        <div class="charContainer" style="width: 28%; top: 44%; left: 7%">
+            <img src="img/characters/shelby.png" class="clearfix charPreview" />
+            <img src="img/characters/shelby edited.png" alt="Shelby Arling" class="clearfix charHover" />
+        </div>
+        <div class="charContainer" style="width: 55%; top: 63%; left: 18%">
+            <img src="img/characters/wj.png" class="clearfix charPreview" />
+            <img src="img/characters/wj edited.png" alt="Jackie An / Wilson Lu" class="clearfix charHover" />
+        </div>
+        <div class="charContainer" style="width: 37%; top: 74%; right: 25%">
+            <img src="img/characters/harrison.png" class="clearfix charPreview" />
+            <img src="img/characters/harrison edited.png" alt="Harrison Piórkowski" class="clearfix charHover" />
+        </div>
+        <div class="charContainer" style="width: 30%; top: 17%; left: 35%">
+            <img src="img/characters/ananyaa.png" class="clearfix charPreview" />
+            <img src="img/characters/ananyaa edited.png" alt="Ananya Arling" class="clearfix charHover" />
+        </div>
+        <div class="charContainer" style="width: 62%; top: 14.5%; right: 14%">
+            <img src="img/characters/daiko rendering layers.png" class="clearfix charPreview" />
+            <img src="img/characters/daiko edited.png" alt="Daiko Fen" class="clearfix charHover" />
+        </div>
+        <div class="charContainer" style="width: 40%; top: 5%; left: 9%">
+            <img src="img/characters/benji2.png" class="clearfix charPreview" />
+            <img src="img/characters/benji2 edited.png" alt="Benji Linden" class="clearfix charHover" />
+        </div>
     </div>
 </div>
 

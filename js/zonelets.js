@@ -230,6 +230,8 @@ if (document.title === "Blog Post") {
 }
 
 //Custom stuff for updates page
+
+//Sets update box to update search param for RSS link support
 var paramsString = new URL(window.location.href);
 var searchParams = new URLSearchParams(paramsString.search);
 console.log(searchParams.get("update"))
@@ -240,12 +242,14 @@ if (document.getElementById("updateBox")) {
       <iframe name="updateFrame" src="` + searchParams.get("update") + `"></iframe>
     `
   }else {
+    //Sets update box to latest update if there is no search param
     document.getElementById("updateBox").innerHTML = `
       <iframe name="updateFrame" src="` + postsArray[0] + `"></iframe>
     `
   }
 }
 
+//Title/date card for update posts
 if (document.getElementById("updateTitleText")) {
   document.getElementById("updateTitleText").innerHTML = currentPostTitle + "<span class='titleSpace'>&emsp;&ensp;</span><span class='titleWrap'><br></span>" + niceDate;
 }
