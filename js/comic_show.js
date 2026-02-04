@@ -59,7 +59,7 @@ function writePage() {
   let altText = ""; //variable for alt text
   let path = (folder != "" ? folder + "/" : "") + image + pg + partExtension + "." + ext; //path for your comics made out of variables strung together
   let page = ``;
-
+    
   if (pgData.length < pg) { //if the array is blank or not long enough to have an entry for this page
     //debug
     console.log("page code to insert - " + page);
@@ -78,6 +78,13 @@ function writePage() {
       if (i > 1) {page += `<br/>`} //add line break
       page += `<img alt="` + altText + `" title="` + altText + `" src="` + path + `" />`; //add page segment
       }
+    } else if (pgData[pg-1].imageFiles < 1) { //skip page if there are no image files (for pages following double spreads)
+
+        var url = new URL(window.location.href);
+        url.searchParams.set("pg", pg + 1);
+        var updatedURL = url.toString();
+        location.href = updatedURL;
+
     } else {
       page = `<img alt="` + altText + `" title="` + altText + `" src="` + path + `" />`;
     }
@@ -149,7 +156,10 @@ function writeNav(imageToggle) {
 
     function prevButton() {
         //PREV BUTTON
-        if (pg > 1) {
+        if (pgData[pg - 2].imageFiles < 1) {
+            //navigate two pages back for pages following double spreads (to allow navigation back to the spread)
+            return `<a href="?pg=` + (pg - 2) + navScrollTo + `"/>` + imgOrText(imageToggle, 1) + `</a>`;
+        } else if (pg > 1) {
             //wait until page 2 to make button active
             return `<a href="?pg=` + (pg - 1) + navScrollTo + `"/>` + imgOrText(imageToggle, 1) + `</a>`;
         } else {

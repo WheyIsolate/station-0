@@ -17,7 +17,7 @@ const maxpg = 40; //the current number of pages your comic has in total. this DO
 // COMIC PAGE SETTINGS
 const folder = "img/comics"; //directory of the folder where you keep all the comics
 const image = "pg"; //what you'll name all your comic pages
-const imgPart = "_" //special character(s) you put after the page number to subdivide pages into multiple image files (ie pg2_1, pg2_2, etc)
+const imgPart = "-" //special character(s) you put after the page number to subdivide pages into multiple image files (ie pg2_1, pg2_2, etc)
 const ext = "jpg"; //file extension of your comic pages
 
 //THUMBNAIL SETTINGS
@@ -45,6 +45,9 @@ if (pg == 0) {pg = maxpg;} //display MOST RECENT COMIC when the webpage is loade
     },
 */
 //Note: the formatting is important! The whole thing won't show up if you forget to include the commas or curly braces in the right place.
+
+//For double spreads, set imageFiles on the first page to the number of the second page of the spread,
+//and set imageFiles on the second page to 0. This will tell it to skip the second page, keeping the page number data consistent.
 
 const pgData = [
     {
@@ -241,7 +244,7 @@ const pgData = [
         title: "",
         date: writeDate(2026, 2, 1),
         altText: "",
-        imageFiles: 1,
+        imageFiles: 23,
         authorNotes: `
             `,
     },
@@ -250,7 +253,7 @@ const pgData = [
         title: "",
         date: writeDate(2026, 2, 1),
         altText: "",
-        imageFiles: 1,
+        imageFiles: 0,
         authorNotes: `
             `,
     },
@@ -313,7 +316,7 @@ const pgData = [
         title: "",
         date: writeDate(2026, 2, 1),
         altText: "",
-        imageFiles: 1,
+        imageFiles: 31,
         authorNotes: `
             `,
     },
@@ -322,7 +325,7 @@ const pgData = [
         title: "",
         date: writeDate(2026, 2, 1),
         altText: "",
-        imageFiles: 1,
+        imageFiles: 0,
         authorNotes: `
             `,
     },
@@ -404,6 +407,132 @@ const pgData = [
         date: writeDate(2026, 2, 1),
         altText: "",
         imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 41,
+        title: "",
+        date: writeDate(2026, 2, 3),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 42,
+        title: "",
+        date: writeDate(2026, 2, 3),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 43,
+        title: "",
+        date: writeDate(2026, 2, 3),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 44,
+        title: "",
+        date: writeDate(2026, 2, 3),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 45,
+        title: "",
+        date: writeDate(2026, 2, 3),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 46,
+        title: "",
+        date: writeDate(2026, 2, 3),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 47,
+        title: "",
+        date: writeDate(2026, 2, 3),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 48,
+        title: "",
+        date: writeDate(2026, 2, 3),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 49,
+        title: "",
+        date: writeDate(2026, 2, 3),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 50,
+        title: "",
+        date: writeDate(2026, 2, 3),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 51,
+        title: "",
+        date: writeDate(2026, 2, 3),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 52,
+        title: "",
+        date: writeDate(2026, 2, 3),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 53,
+        title: "",
+        date: writeDate(2026, 2, 3),
+        altText: "",
+        imageFiles: 1,
+        authorNotes: `
+            `,
+    },
+    {
+        pgNum: 54,
+        title: "",
+        date: writeDate(2026, 2, 3),
+        altText: "",
+        imageFiles: 55,
         authorNotes: `
             `,
     },
