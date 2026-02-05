@@ -44,15 +44,29 @@
             left: 20px;
         }
         .spin {
-            animation: rotation 2s linear infinite;
+            position: absolute;
+            top: 30px;
+            width: 200px;
+            animation: rotation 60s linear infinite;
         }
         @keyframes rotation {
         0% {
             transform: rotate(0deg);
+            left: 5%;
+        }
+        50% {
+            transform: rotate(180deg);
+            left: 85%;
         }
         100% {
             transform: rotate(360deg);
+            left: 5%;
         }
+        }
+        @media only screen and (max-width: 600px) {
+            .spin {
+                width: 150px;
+            }
         }
     </style>
     
@@ -63,6 +77,7 @@
 <body>
 
 <audio id="audio" preload="auto" tabindex="0" controls="" type="audio/mpeg"></audio>
+<img src="img/astro.png" class="spin">
 <a href="javascript:void(0)" id="audioControl"><img src="img/music button.png"></a>
 
 <div align="center" class="filterDiv">
@@ -127,12 +142,6 @@ function audioButton() {
     var method = pause ? 'play' : 'pause';
     audioElement[method]();
     
-    if(pause) {
-        ctrl.classList.add("spin");
-    }else {
-        ctrl.classList.remove("spin");
-    }
-
     pause = !pause;
     
     return false;
