@@ -367,9 +367,14 @@ html, body {
   background-color: #efe8d3;
 }
 .updates li,
-.updates a {
+.updates a,
+.updates p {
   color: #0f0f0e;
   text-align: left;
+}
+.updates p {
+  text-align: right;
+  margin-right: 1.5em;
 }
 
 #updateBox {
