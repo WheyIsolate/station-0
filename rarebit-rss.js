@@ -1,7 +1,7 @@
 // usage: run the command `node rarebit-rss.js`. make sure you have <https://nodejs.org/> installed.
 // STUFF WHICH YOU SHOULD SET TO YOUR OWN COMIC'S INFO
-const url = 'https://rarebit.neocities.org/rarebit/'; // base URL (make sure to include the slash at the end)
-const title = 'Rarebit Example'; // title of the RSS feed
+const url = 'https://127.0.0.1:8080/'; // base URL (make sure to include the slash at the end)
+const title = 'Station -0 | Comic'; // title of the RSS feed
 const outputFile = 'feed.rss'; // name of file to output to
 // END OF STUFF
 
