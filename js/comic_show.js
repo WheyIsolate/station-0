@@ -15,7 +15,9 @@ console.log(pg)
 
 writePageTitle(".writePageTitle", false, " - "); //write title of page. true/false
 
-writePageClickable(".writePageClickable",true); //show the current page. to toggle whether pages can be clicked to move to the next one, set this to true or false.
+writePageClickable(".writePageClickable", false); //show the current page. to toggle whether pages can be clicked to move to the next one, set this to true or false.
+
+writePageEnlarge(".writePageClickable", true); //custom function to open enlarged version of pages when they are clicked. mutually exclusive with writePageClickable.
 
 writeAuthorNotes(".writeAuthorNotes");
 
@@ -33,6 +35,15 @@ function writePageClickable(div,clickable) {
         document.querySelector(div).innerHTML = `<div class="comicPage"><a href="?pg=${pg + 1}${navScrollTo}"/>${writePage()}</a></div>`; //display comic page and make it so that clicking it will lead you to the next page
     } else {
         document.querySelector(div).innerHTML = `<div class="comicPage">${writePage()}</div>`; //display comic page without link
+    }
+}
+
+function writePageEnlarge(div, clickable) {
+    if (!clickable) {
+        document.querySelector(div).innerHTML = `<div class="comicPage">${writePage()}</div>`;
+    } else {
+        //adds link tag to image which opens the image; detects if page is double spread and reformats image link accordingly
+        document.querySelector(div).innerHTML = `<div class="comicPage"><a href="img/comics/${image}${pg}${(pgData[pg - 1].imageFiles > 1) ? (imgPart + pgData[pg - 1].imageFiles) : ""}.${ext}" target=_blank>${writePage()}</a></div>`;
     }
 }
 
