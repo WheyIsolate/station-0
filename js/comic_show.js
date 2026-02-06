@@ -8,7 +8,7 @@
 
 
 
-writeNav(true); //show navigation for comic pages. to toggle either images or text for nav, set this to true or false.
+writeNav(false); //show navigation for comic pages. to toggle either images or text for nav, set this to true or false.
 
 //debug
 console.log(pg)
@@ -86,7 +86,7 @@ function writePage() {
     for (let i = 1; i < pgData[pg-1].imageFiles+1; i++) { //for loop to put all the parts of the image on the webpage
       partExtension = imgPart + i.toString();
       path = (folder != "" ? folder + "/" : "") + image + pg + partExtension + "." + ext; //reinit path (there has to be a less dumb way to do this)
-      if (i > 1) {page += `<br/>`} //add line break
+      //if (i > 1) {page += `<br/>`} //add line break
       page += `<img alt="` + altText + `" title="` + altText + `" src="` + path + `" />`; //add page segment
       }
     } else if (pgData[pg-1].imageFiles < 1) { //skip page if there are no image files (for pages following double spreads)
@@ -132,12 +132,9 @@ function writeNav(imageToggle) {
     //decorative center image added on
       element.innerHTML = `<div class="comicNav">
         ${firstButton()}
-        ${divider()}
         ${prevButton()}
-        ${divider()}
         <img src="img/comicnav/waow.png" class="comicNavCenter">
         ${nextButton()}
-        ${divider()}
         ${lastButton()}
         </div>
         `;})
@@ -150,7 +147,7 @@ function writeNav(imageToggle) {
             return `<a href="?pg=` + 1 + navScrollTo + `"/>` + imgOrText(imageToggle, 0) + `</a>`;
         } else {
             if (!imageToggle) {
-                return imgOrText(imageToggle, 0);
+                return '<p>' + imgOrText(imageToggle, 0) + '</p>';
             } else {
                 return `<p>` + imgOrText(imageToggle, 0) + `</p>`;
             }
@@ -175,7 +172,7 @@ function writeNav(imageToggle) {
             return `<a href="?pg=` + (pg - 1) + navScrollTo + `"/>` + imgOrText(imageToggle, 1) + `</a>`;
         } else {
             if (!imageToggle) {
-                return imgOrText(imageToggle, 1);
+                return '<p>' + imgOrText(imageToggle, 1) + '</p>';
             } else {
                 return `<p>` + imgOrText(imageToggle, 1) + `</p>`;
             }
@@ -189,7 +186,7 @@ function writeNav(imageToggle) {
             return `<a href="?pg=` + (pg + 1) + navScrollTo + `"/>` + imgOrText(imageToggle, 2) + `</a>`;
         } else {
             if (!imageToggle) {
-                return imgOrText(imageToggle, 2);
+                return '<p>' + imgOrText(imageToggle, 2) + '</p>';
             } else {
                 return `<p>` + imgOrText(imageToggle, 2) + `</p>`;
             }
@@ -203,7 +200,7 @@ function writeNav(imageToggle) {
             return `<a href="?pg=` + maxpg + navScrollTo + `"/>` + imgOrText(imageToggle, 3) + `</a>`;
         } else {
             if (!imageToggle) {
-                return imgOrText(imageToggle, 3);
+                return '<p>' + imgOrText(imageToggle, 3) + '</p>';
             } else {
                 return `<p>` + imgOrText(imageToggle, 3) + `</p>`;
             }
@@ -224,3 +221,10 @@ function keyNav() {
     window.scrollBy({ top: 30 });
   }
 });};
+
+//hide blank/broken images (fixes double pages on Chromium browsers)
+document.addEventListener("DOMContentLoaded", function (event) {
+    document.querySelectorAll('img').forEach(function (img) {
+        img.onerror = function () { this.style.display = 'none'; };
+    })
+});

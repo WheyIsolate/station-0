@@ -354,10 +354,13 @@ html, body {
 }
 
 /* comic navigation button styling */
-.writeNav a,
-.writeNav p {
+/* there is a scary amount of jank in regards to the .comicNav class since I'm trying to hack styling into text navigation */
+.writeNav .comicNav a,
+.writeNav .comicNav p {
   font-size: 1.5em;
   text-decoration: none;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 /* updates page */
@@ -466,8 +469,8 @@ header #nav a {
   margin: 50px 1% 25px 1%;
 }
 
-.writeNav a,
-.writeNav p {
+.writeNav .comicNav a,
+.writeNav .comicNav p {
   font-size: 1em;
 }
 .comicNav .comicNavCenter {
