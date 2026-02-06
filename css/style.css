@@ -57,7 +57,7 @@ header img {
 
 /* header font */
 #showComic, header, h1, h2, h3, h4, h5 {
-  font-family: 'Libertine', sans-serif;
+  font-family: 'Libertine', serif;
 }
 
 /* header sizes */
@@ -400,7 +400,6 @@ html, body {
 .footerImage {
   position: absolute;
   transform: translate(-20px, -92px);
-  pointer-events: none;
 }
 
 
@@ -483,6 +482,10 @@ header #nav a {
 }
 #updateBox {
   margin-bottom: 60px;
+}
+
+.emCredit {
+  transform: scale(0.8);
 }
 
 }
